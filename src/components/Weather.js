@@ -1,24 +1,31 @@
 import React from 'react';
 
 class Weather extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
+    let tempF = Math.floor(this.props.tempF)
+    let tempC = Math.floor(this.props.tempC)
     return(
-      <div>
-    
-        <p>{this.props.location}</p>
-        <p>{this.props.tempF}</p>
-        <p>{this.props.tempC}</p>
-        <p>{this.props.feelsLikeF}</p>
-        <p>{this.props.feelsLikeC}</p>
-        <p>{this.props.condition}</p>
-        <p>{this.props.conditionPic}</p>
-        <p>{this.props.time}</p>
-        <p>{this.props.lastUpdated}</p>
-    
+      
+      <div className='info'>
+
+          {this.props.errorText
+            ? 
+            <div className='errorText'>
+              <p>{this.props.errorText}</p>
+            </div> 
+            :
+            <div className='weatherInfo'>
+              <p className='city'>{this.props.location}</p>
+
+              <p className='tempF'>{tempF}</p>
+              <p className='tempC'>{tempC}</p>
+              <p className='condition'>{this.props.condition}</p>
+
+              <p className='time'>{this.props.time}</p>
+            </div>
+         }
+
       </div>
     )
     

@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #api keys and other private info
-./src/keys
+/src/keys
